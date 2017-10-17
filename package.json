@@ -1,27 +1,28 @@
 {
-  "name": "friendfinder",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "dependencies": {
-    "ascii-table": "^0.0.9",
-    "body-parser": "^1.18.2",
-    "init": "^0.1.2",
-    "inquirer": "^3.3.0",
-    "mysql": "^2.15.0"
-  },
-  "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/robrollner/FriendFinder.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/robrollner/FriendFinder/issues"
-  },
-  "homepage": "https://github.com/robrollner/FriendFinder#readme"
+    "name": "friendfinder",
+    "version": "1.0.0",
+    "description": "",
+    "main": "friends.js",
+    "dependencies": {
+        "ascii-table": "^0.0.9",
+        "body-parser": "^1.18.2",
+        "init": "^0.1.2",
+        "inquirer": "^3.3.0",
+        "mysql": "^2.15.0"
+    },
+    "devDependencies": {},
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node friends.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/robrollner/FriendFinder.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/robrollner/FriendFinder/issues"
+    },
+    "homepage": "https://github.com/robrollner/FriendFinder#readme"
 }
