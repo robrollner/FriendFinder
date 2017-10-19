@@ -9,7 +9,8 @@
         "express": "^4.16.2",
         "init": "^0.1.2",
         "inquirer": "^3.3.0",
-        "mysql": "^2.15.0"
+        "mysql": "^2.15.0",
+        "path": "^0.12.7"
     },
     "devDependencies": {},
     "scripts": {
