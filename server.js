@@ -1,6 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const path = require("path");
+const colors = require('colors');
 
 var app = express();
 var PORT = process.env.PORT || 3000;
@@ -13,5 +14,5 @@ require("./routing/apiRoutes")(app);
 // Starts the server to begin listening
 // =============================================================
 app.listen(PORT, function() {
-    console.log(`Listening on Port: ${PORT}`);
+    console.log(`Listening on Port: ${PORT}`.cyan);
 });
