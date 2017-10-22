@@ -43,73 +43,75 @@ $(document).ready(function() {
                 image: image,
                 answers: [q1, q2, q3, q4, q5, q6, q7, q8, q9, q10]
             }
+
+            friendSurvey(newFriend.answers);
+
+            setTimeout(postData, 3000);
+
+            function postData() {
+                $.post({ url: '/api/friends', contentType: 'application/json' }, JSON.stringify(newFriend));
+            }
+
+
+            $("#name").val("");
+            $("#image").val("");
+            $("#q1").val("");
+            $("#q2").val("");
+            $("#q3").val("");
+            $("#q4").val("");
+            $("#q5").val("");
+            $("#q6").val("");
+            $("#q7").val("");
+            $("#q8").val("");
+            $("#q9").val("");
+            $("#q10").val("");
         };
-
-        friendSurvey(newFriend.answers);
-
-        setTimeout(postData, 3000);
-
-        function postData() {
-            $.post({ url: '/api/friends', contentType: 'application/json' }, JSON.stringify(newFriend));
-        }
-
-
-        $("#name").val("");
-        $("#image").val("");
-        $("#q1").val("");
-        $("#q2").val("");
-        $("#q3").val("");
-        $("#q4").val("");
-        $("#q5").val("");
-        $("#q6").val("");
-        $("#q7").val("");
-        $("#q8").val("");
-        $("#q9").val("");
-        $("#q10").val("");
 
     })
 
 
-})
 
+    function friendSurvey(answers) {
 
-function friendSurvey(answers) {
+        $.get('/api/friends', (friends) => {
+            var count = 0;
+            var friendArray = friends.length;
 
-    $.get('/api/friends', (friends) => {
+            for (var i = 0; i < friendArray; i++) {
+                friendCompare(answers, friends[i]);
+                count++;
+            }
+
+            if (count === friendArray) {
+                $('#myModal').modal('toggle');
+                $('#corgiLover').html(bestFriend.name + " loves Corgis too!");
+                $('#corgiImg').attr('src', bestFriend.image);
+
+            }
+        })
+    }
+    friendSurvey();
+
+    // console.log("dbbdhhg " + friends);
+
+    function friendCompare(user, friend) {
+        var compare = 0;
         var count = 0;
-        var friendArray = friends.length;
 
-        for (var i = 0; i < friendArray.length; i++) {
-            friendCompare(answers, friends[i]);
+        for (var i = 0; i < 5; i++) {
+            compare += Math.abs(user[i] - friend.answers[i]);
             count++;
         }
 
-        if (count === friendArray) {
-            $('#myModal').modal('toggle');
-            $('#corgiLover').html(bestFriend.name + " loves Corgis too!");
-            $('#corgiImg').attr('src', bestFriend.image);
-
-        }
-    })
-}
-friendSurvey();
-
-function friendCompare(user, friend) {
-    var compare = 0;
-    var count = 0;
-
-    for (var i = 0; i < 5; i++) {
-        compare += Math.abs(user[i] - friend.answers[i]);
-        count++;
-    }
-
-    if (count === 5) {
-        if (compare < bestFriend.compare) {
-            bestFriend.compare = compare;
-            bestFriend.name = friend.name;
-            bestFriend.image = friend.image;
-        } else {
-            return;
+        if (count === 5) {
+            if (compare < bestFriend.compare) {
+                bestFriend.compare = compare;
+                bestFriend.name = friend.name;
+                bestFriend.image = friend.image;
+            } else {
+                return bestFriend;
+            }
         }
     }
-}
+
+})
