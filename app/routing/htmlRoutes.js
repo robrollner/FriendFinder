@@ -2,7 +2,7 @@ module.exports = (app) => {
 
     app.get("/", function(req, res) {
         //set default
-        res.sendFile('home.html', { root: './public/' });
+        res.sendFile('home.html', { root: './app/public/' });
 
     });
 
@@ -14,7 +14,7 @@ module.exports = (app) => {
 
     app.get("/survey", function(req, res) {
         //path to survey page.
-        res.sendFile('survey.html', { root: './public/' });
+        res.sendFile('survey.html', { root: './app/public/' });
 
     });
 

@@ -40,6 +40,9 @@ $('#submit').on('click', () => {
 
         friendSurvey(corgiLover.scores);
 
+
+        setTimeout(updateData, 750);
+
         function updateData() {
             $.post({ url: '/api/friends', contentType: 'application/json' }, JSON.stringify(corgiLover));
         }
@@ -59,7 +62,8 @@ $('#submit').on('click', () => {
 
     }
 
-    updateData();
+    // console.log(this);
+    // updateData();
 })
 
 function friendSurvey(scores) {
