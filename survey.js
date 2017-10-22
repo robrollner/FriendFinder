@@ -2,12 +2,12 @@ let newFriend = {};
 let bestFriend = {
     diff: 99,
     name: '',
-    picture: ''
+    image: ''
 };
 
 $('#submit').on('click', () => {
     var corgiLover = $('#name').val().trim();
-    var pic = $('#picture').val().trim();
+    var pic = $('#image').val().trim();
     var ans1 = $('#quest1').val().trim();
     var ans2 = $('#quest2').val().trim();
     var ans3 = $('#quest3').val().trim();
@@ -19,12 +19,12 @@ $('#submit').on('click', () => {
     var ans9 = $('#quest9').val().trim();
     var ans10 = $('#quest10').val().trim();
 
-    if (corgiLover === "" || pic === "") {
+    if (corgiLover === "" || pic === "" || ans1 === "" || ans2 === "" || ans3 === "" || ans4 === "" || ans5 === "" || ans6 === "" || ans7 === "" || ans8 === "" || ans9 === "" || ans10 === "") {
         alert('Faceless men do not love Corgis, please provide your name and picture')
     } else {
         newFriend = {
             name: corgiLover,
-            picture: pic,
+            photo: pic,
             scores: [ans1,
                 ans2,
                 ans3,
@@ -44,8 +44,8 @@ $('#submit').on('click', () => {
             $.post({ url: '/api/friends', contentType: 'application/json' }, JSON.stringify(corgiLover));
         }
 
-        $('name').val('');
-        $('picture').val('');
+        $('#name').val('');
+        $('#image').val('');
         $('#quest1').val('');
         $('#quest2').val('');
         $('#quest3').val('');
@@ -58,4 +58,48 @@ $('#submit').on('click', () => {
         $('#quest10').val('');
 
     }
+
+    updateData();
 })
+
+function friendSurvey(scores) {
+
+    $.get('/api/friends', (friends) => {
+        var number = 0;
+        var friendArray = friends.length;
+
+        for (var i = 0; i < friendArray.length; i++) {
+            friendScore(scores, friends[i]);
+            number++;
+        }
+
+        if (number === friendArray) {
+            $('#corgiLover').text(bestFriend.name);
+            $('#corgiImg').attr('src', bestFriend.image);
+            $('#myModal').modal('toggle');
+
+        }
+    });
+}
+
+function friendScore(user, friend) {
+
+    var diff = 0;
+    var number = 0;
+
+    for (var i = 0; i < 5; i++) {
+        diff += Math.abs(user[i] - friend.scores[i]);
+        number++;
+    }
+
+    if (number === 5) {
+        if (diff < bestFriend.diff) {
+            bestFriend.diff = diff;
+            bestFriend.name = friend.name;
+            bestFriend.image = friend.photo;
+        } else {
+
+            return;
+        }
+    }
+}

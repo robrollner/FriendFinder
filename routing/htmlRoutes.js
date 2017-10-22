@@ -6,9 +6,9 @@ module.exports = (app) => {
 
     });
 
-    app.get("/home", function(req, res) {
+    app.get("/survey.js", function(req, res) {
         //reference same home page as default 
-        res.sendFile('home.html', { root: './public/' });
+        res.sendFile('survey.js', { root: './' });
 
     });
 
