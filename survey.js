@@ -92,6 +92,7 @@ function friendSurvey(answers) {
         }
     })
 }
+friendSurvey();
 
 function friendCompare(user, friend) {
     var compare = 0;
