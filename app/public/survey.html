@@ -8,9 +8,10 @@
     <!-- Bootstrap -->
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <!-- bootstrap Slate -->
-    <link rel="stylesheet" type="text/css" href="https://bootswatch.com/slate/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://bootswatch.com/cyborg/bootstrap.min.css">
     <!-- awesome fonts -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -41,150 +42,151 @@
 
 
     <div class="container">
+        <div class="jumbotron">
+            <h2 class="text-danger">Survey Questions</h2>
 
-        <h2>Survey Questions</h2>
+            <hr>
 
-        <hr>
+            <h3 class="text-info"><strong>About You</strong></h3>
+            <h4>Name (Required)</h4>
+            <input type="text" name="" id="name" class="form-control" required placeholder="Corgi Lover">
 
-        <h3><strong>About You</strong></h3>
-        <h4>Name (Required)</h4>
-        <input type="text" name="" id="name" class="form-control" required>
+            <h4>Link to Photo Image (Required)</h4>
+            <input type="text" name="" id="image" class="form-control" required placeholder="https://i.imgur.com/tnKU9Jo.jpg">
 
-        <h4>Link to Photo Image (Required)</h4>
-        <input type="text" name="" id="image" class="form-control" required>
-
-        <hr>
-
-        <h3><strong>Question 1</strong></h3>
-        <!-- Enter question between the h4 below -->
-        <h4 class="text-info">I like doggos.</h4>
-        <select data-placeholder="" class="chosen-select" id="q1">
+            <hr>
+        </div>
+        <div class="jumbotron">
+            <h3><strong>Question 1</strong></h3>
+            <!-- Enter question between the h4 below -->
+            <h4 class="text-primary">I like doggos.</h4>
+            <select data-placeholder="" class="chosen-select" id="q1">
          <option value=""></option>
-        <option class="text-danger" value="1">1 (Strongly Disagree)</option>
-        <option class="text-danger" value="2">2</option>
-        <option class="text-danger" value="3">3</option>
-        <option class="text-danger" value="4">4</option>
-        <option class="text-danger" value="5">5 (Strongly Agree)</option>
+        <option class="text-info" value="1"><strong>1 (Strongly Disagree)</strong></option>
+        <option class="text-info" value="2"><strong>2</strong></option>
+        <option class="text-info" value="3"><strong>3</strong></option>
+        <option class="text-info" value="4"><strong>4</strong></option>
+        <option class="text-info" value="5"><strong>5 (Strongly Agree)</strong></option>
       </select>
 
-        <h3><strong>Question 2</strong></h3>
-        <!-- Enter question between the h4 below -->
-        <h4 class="text-info">Corgis are the best doggos.</h4>
-        <select data-placeholder="" class="chosen-select" id="q2">
+            <h3><strong>Question 2</strong></h3>
+            <!-- Enter question between the h4 below -->
+            <h4 class="text-primary">Corgis are the best doggos.</h4>
+            <select data-placeholder="" class="chosen-select" id="q2">
          <option value=""></option>
-        <option class="text-danger" value="1">1 (Strongly Disagree)</option>
-        <option class="text-danger" value="2">2</option>
-        <option class="text-danger" value="3">3</option>
-        <option class="text-danger" value="4">4</option>
-        <option class="text-danger" value="5">5 (Strongly Agree)</option>
-      </select>
-
-
-        <h3><strong>Question 3</strong></h3>
-        <!-- Enter question between the h4 below -->
-        <h4 class="text-info">Corgi Husky mixes called Horgis are even better than regular Corgis.</h4>
-        <select data-placeholder="" class="chosen-select" id="q3">
-         <option value=""></option>
-        <option class="text-danger" value="1">1 (Strongly Disagree)</option>
-        <option class="text-danger" value="2">2</option>
-        <option class="text-danger" value="3">3</option>
-        <option class="text-danger" value="4">4</option>
-        <option class="text-danger" value="5">5 (Strongly Agree)</option>
+        <option class="text-info" value="1"><strong>1 (Strongly Disagree)</strong></option>
+        <option class="text-info" value="2"><strong>2</strong></option>
+        <option class="text-info" value="3"><strong>3</strong></option>
+        <option class="text-info" value="4"><strong>4</strong></option>
+        <option class="text-info" value="5"><strong>5 (Strongly Agree)</strong></option>
       </select>
 
 
-        <h3><strong>Question 4</strong></h3>
-        <!-- Enter question between the h4 below -->
-        <h4 class="text-info">Two Corgis are better than one Corgi.</h4>
-        <select data-placeholder="" class="chosen-select" id="q4">
+            <h3><strong>Question 3</strong></h3>
+            <!-- Enter question between the h4 below -->
+            <h4 class="text-primary">Corgi Husky mixes called Horgis are even better than regular Corgis.</h4>
+            <select data-placeholder="" class="chosen-select" id="q3">
          <option value=""></option>
-        <option class="text-danger" value="1">1 (Strongly Disagree)</option>
-        <option class="text-danger" value="2">2</option>
-        <option class="text-danger" value="3">3</option>
-        <option class="text-danger" value="4">4</option>
-        <option class="text-danger" value="5">5 (Strongly Agree)</option>
+        <option class="text-info" value="1"><strong>1 (Strongly Disagree)</strong></option>
+        <option class="text-info" value="2"><strong>2</strong></option>
+        <option class="text-info" value="3"><strong>3</strong></option>
+        <option class="text-info" value="4"><strong>4</strong></option>
+        <option class="text-info" value="5"><strong>5 (Strongly Agree)</strong></option>
       </select>
 
 
-        <h3><strong>Question 5</strong></h3>
-        <!-- Enter question between the h4 below -->
-        <h4 class="text-info">Three Corgis are better than two Corgis.</h4>
-        <select data-placeholder="" class="chosen-select" id="q5">
+            <h3><strong>Question 4</strong></h3>
+            <!-- Enter question between the h4 below -->
+            <h4 class="text-primary">Two Corgis are better than one Corgi.</h4>
+            <select data-placeholder="" class="chosen-select" id="q4">
          <option value=""></option>
-        <option class="text-danger" value="1">1 (Strongly Disagree)</option>
-        <option class="text-danger" value="2">2</option>
-        <option class="text-danger" value="3">3</option>
-        <option class="text-danger" value="4">4</option>
-        <option class="text-danger" value="5">5 (Strongly Agree)</option>
+        <option class="text-info" value="1"><strong>1 (Strongly Disagree)</strong></option>
+        <option class="text-info" value="2"><strong>2</strong></option>
+        <option class="text-info" value="3"><strong>3</strong></option>
+        <option class="text-info" value="4"><strong>4</strong></option>
+        <option class="text-info" value="5"><strong>5 (Strongly Agree)</strong></option>
       </select>
 
 
-        <h3><strong>Question 6</strong></h3>
-        <!-- Enter question between the h4 below -->
-        <h4 class="text-info">Corgis have wiggily butts.</h4>
-        <select data-placeholder="" class="chosen-select" id="q6">
+            <h3><strong>Question 5</strong></h3>
+            <!-- Enter question between the h4 below -->
+            <h4 class="text-primary">Three Corgis are better than two Corgis.</h4>
+            <select data-placeholder="" class="chosen-select" id="q5">
          <option value=""></option>
-        <option class="text-danger" value="1">1 (Strongly Disagree)</option>
-        <option class="text-danger" value="2">2</option>
-        <option class="text-danger" value="3">3</option>
-        <option class="text-danger" value="4">4</option>
-        <option class="text-danger" value="5">5 (Strongly Agree)</option>
+        <option class="text-info" value="1"><strong>1 (Strongly Disagree)</strong></option>
+        <option class="text-info" value="2"><strong>2</strong></option>
+        <option class="text-info" value="3"><strong>3</strong></option>
+        <option class="text-info" value="4"><strong>4</strong></option>
+        <option class="text-info" value="5"><strong>5 (Strongly Agree)</strong></option>
       </select>
 
 
-        <h3><strong>Question 7</strong></h3>
-        <!-- Enter question between the h4 below -->
-        <h4 class="text-info">Corgis are the silliest of doggos.</h4>
-        <select data-placeholder="" class="chosen-select" id="q7">
+            <h3><strong>Question 6</strong></h3>
+            <!-- Enter question between the h4 below -->
+            <h4 class="text-primary">Corgis have wiggily butts.</h4>
+            <select data-placeholder="" class="chosen-select" id="q6">
          <option value=""></option>
-        <option class="text-danger" value="1">1 (Strongly Disagree)</option>
-        <option class="text-danger" value="2">2</option>
-        <option class="text-danger" value="3">3</option>
-        <option class="text-danger" value="4">4</option>
-        <option class="text-danger" value="5">5 (Strongly Agree)</option>
+        <option class="text-info" value="1"><strong>1 (Strongly Disagree)</strong></option>
+        <option class="text-info" value="2"><strong>2</strong></option>
+        <option class="text-info" value="3"><strong>3</strong></option>
+        <option class="text-info" value="4"><strong>4</strong></option>
+        <option class="text-info" value="5"><strong>5 (Strongly Agree)</strong></option>
       </select>
 
-        <h3><strong>Question 8</strong></h3>
-        <!-- Enter question between the h4 below -->
-        <h4 class="text-info">Corgis have perfect ears.</h4>
-        <select data-placeholder="" class="chosen-select" id="q8">
+
+            <h3><strong>Question 7</strong></h3>
+            <!-- Enter question between the h4 below -->
+            <h4 class="text-primary">Corgis are the silliest of doggos.</h4>
+            <select data-placeholder="" class="chosen-select" id="q7">
          <option value=""></option>
-        <option class="text-danger" value="1">1 (Strongly Disagree)</option>
-        <option class="text-danger" value="2">2</option>
-        <option class="text-danger" value="3">3</option>
-        <option class="text-danger" value="4">4</option>
-        <option class="text-danger" value="5">5 (Strongly Agree)</option>
+        <option class="text-info" value="1"><strong>1 (Strongly Disagree)</strong></option>
+        <option class="text-info" value="2"><strong>2</strong></option>
+        <option class="text-info" value="3"><strong>3</strong></option>
+        <option class="text-info" value="4"><strong>4</strong></option>
+        <option class="text-info" value="5"><strong>5 (Strongly Agree)</strong></option>
       </select>
 
-        <h3><strong>Question 9</strong></h3>
-        <!-- Enter question between the h4 below -->
-        <h4 class="text-info">Corgis make me happy.</h4>
-        <select data-placeholder="" class="chosen-select" id="q9">
+            <h3><strong>Question 8</strong></h3>
+            <!-- Enter question between the h4 below -->
+            <h4 class="text-primary">Corgis have perfect ears.</h4>
+            <select data-placeholder="" class="chosen-select" id="q8">
          <option value=""></option>
-        <option class="text-danger" value="1">1 (Strongly Disagree)</option>
-        <option class="text-danger" value="2">2</option>
-        <option class="text-danger" value="3">3</option>
-        <option class="text-danger" value="4">4</option>
-        <option class="text-danger" value="5">5 (Strongly Agree)</option>
+        <option class="text-info" value="1"><strong>1 (Strongly Disagree)</strong></option>
+        <option class="text-info" value="2"><strong>2</strong></option>
+        <option class="text-info" value="3"><strong>3</strong></option>
+        <option class="text-info" value="4"><strong>4</strong></option>
+        <option class="text-info" value="5"><strong>5 (Strongly Agree)</strong></option>
       </select>
 
-        <h3><strong>Question 10</strong></h3>
-        <!-- Enter question between the h4 below -->
-        <h4 class="text-info">I want all the Corgis.</h4>
-        <select data-placeholder="" class="chosen-select" id="q10">
+            <h3><strong>Question 9</strong></h3>
+            <!-- Enter question between the h4 below -->
+            <h4 class="text-primary">Corgis make me happy.</h4>
+            <select data-placeholder="" class="chosen-select" id="q9">
          <option value=""></option>
-        <option class="text-danger" value="1">1 (Strongly Disagree)</option>
-        <option class="text-danger" value="2">2</option>
-        <option class="text-danger" value="3">3</option>
-        <option class="text-danger" value="4">4</option>
-        <option class="text-danger" value="5">5 (Strongly Agree)</option>
+        <option class="text-info" value="1"><strong>1 (Strongly Disagree)</strong></option>
+        <option class="text-info" value="2"><strong>2</strong></option>
+        <option class="text-info" value="3"><strong>3</strong></option>
+        <option class="text-info" value="4"><strong>4</strong></option>
+        <option class="text-info" value="5"><strong>5 (Strongly Agree)</strong></option>
       </select>
 
-        <br>
-        <br>
+            <h3><strong>Question 10</strong></h3>
+            <!-- Enter question between the h4 below -->
+            <h4 class="text-primary">I want all the Corgis.</h4>
+            <select data-placeholder="" class="chosen-select" id="q10">
+         <option value=""></option>
+        <option class="text-info" value="1"><strong>1 (Strongly Disagree)</strong></option>
+        <option class="text-info" value="2"><strong>2</strong></option>
+        <option class="text-info" value="3"><strong>3</strong></option>
+        <option class="text-info" value="4"><strong>4</strong></option>
+        <option class="text-info" value="5"><strong>5 (Strongly Agree)</strong></option>
+      </select>
 
+            <br>
+            <br>
+        </div>
         <!-- Submit Button -->
-        <button type="submit" class="btn btn-primary btn-lg btn-block" id="submitBtn"><i class="fa fa-check-circle" aria-hidden="true"></i>
+        <button type="submit" class="btn btn-default btn-lg btn-block" id="submitBtn"><i class="fa fa-spinner fa-spin fa-3x fa-fw" aria-hidden="true"></i>
 Corgi Lover's Rejoice!</button>
 
         <hr>
