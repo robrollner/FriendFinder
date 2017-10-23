@@ -1,12 +1,10 @@
 $(document).ready(function() {
-    var newFriend = {};
-    var bestFriend = {
-        compare: 666,
+    let newFriend = {};
+    let bestFriend = {
+        compare: 100,
         name: "",
         image: "",
     };
-
-
 
     $("#submitBtn").on("click", function() {
         let name = $("#name").val().trim();
@@ -21,6 +19,8 @@ $(document).ready(function() {
         let q8 = $("#q8").val().trim();
         let q9 = $("#q9").val().trim();
         let q10 = $("#q10").val().trim();
+
+
         if (name === "" ||
             image === "" ||
             q1 === "" ||
@@ -46,7 +46,7 @@ $(document).ready(function() {
 
             friendSurvey(newFriend.answers);
 
-            setTimeout(postData, 3000);
+            setTimeout(postData, 500);
 
             function postData() {
                 $.post({ url: '/api/friends', contentType: 'application/json' }, JSON.stringify(newFriend));
@@ -55,16 +55,16 @@ $(document).ready(function() {
 
             $("#name").val("");
             $("#image").val("");
-            $("#q1").val("");
-            $("#q2").val("");
-            $("#q3").val("");
-            $("#q4").val("");
-            $("#q5").val("");
-            $("#q6").val("");
-            $("#q7").val("");
-            $("#q8").val("");
-            $("#q9").val("");
-            $("#q10").val("");
+            $("#q1").val();
+            $("#q2").val();
+            $("#q3").val();
+            $("#q4").val();
+            $("#q5").val();
+            $("#q6").val();
+            $("#q7").val();
+            $("#q8").val();
+            $("#q9").val();
+            $("#q10").val();
         };
 
     })
@@ -84,22 +84,21 @@ $(document).ready(function() {
 
             if (count === friendArray) {
                 $('#myModal').modal('toggle');
-                $('#corgiLover').html(bestFriend.name + " loves Corgis too!");
+                $('#corgiLover').html(bestFriend.name);
                 $('#corgiImg').attr('src', bestFriend.image);
 
             }
         })
     }
-    friendSurvey();
 
-    // console.log("dbbdhhg " + friends);
 
     function friendCompare(user, friend) {
+
         var compare = 0;
         var count = 0;
 
         for (var i = 0; i < 5; i++) {
-            compare += Math.abs(user[i] - friend.answers[i]);
+            compare = Math.abs(user[i] - friend.answers[i]);
             count++;
         }
 
@@ -109,8 +108,9 @@ $(document).ready(function() {
                 bestFriend.name = friend.name;
                 bestFriend.image = friend.image;
             } else {
-                return bestFriend;
+                return;
             }
+
         }
     }
 
