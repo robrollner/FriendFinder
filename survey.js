@@ -74,20 +74,14 @@ $(document).ready(function() {
     function friendSurvey(answers) {
 
         $.get('/api/friends', (friends) => {
-            var count = 0;
             var friendArray = friends.length;
 
             for (var i = 0; i < friendArray; i++) {
                 friendCompare(answers, friends[i]);
-                count++;
             }
-
-            if (count === friendArray) {
-                $('#myModal').modal('toggle');
-                $('#corgiLover').html(bestFriend.name);
-                $('#corgiImg').attr('src', bestFriend.image);
-
-            }
+            $('#myModal').modal('toggle');
+            $('#corgiLover').html(bestFriend.name);
+            $('#corgiImg').attr('src', bestFriend.image);
         })
     }
 
